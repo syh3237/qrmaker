@@ -1,9 +1,25 @@
 import React from 'react';
+import { useState } from 'react';
+
 
 function Home({ qrCodeUrl }) {
+  let [modal, setModal] = useState(false);
   return  <div>
-    전화 걸기
-    프로필 보기
+    <button onClick={()=>{
+      setModal(!modal)
+    }}>전화 걸기</button>
+    {
+      modal === true ? <div className='modal'>
+        <div className="inner">
+          <div>010-0000-0000</div>
+          <button>Call</button>
+          <button className='btn_close' onClick={()=>{
+                  setModal(false)
+          }}>X</button>
+        </div>
+      </div> : null
+    }
+    <button>프로필 보기</button>
   </div>;
 }
 
