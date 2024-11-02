@@ -5,6 +5,8 @@ import Home from './components/Home';
 import Admin from './components/Admin';
 import './style.css';
 
+import PrivateRoute from './auth/PrivateRoute';
+import Login from './components/Login'; // Login 컴포넌트 임포트 추가
 
 function App() {
   const [qrCodeUrl, setQrCodeUrl] = useState('');
@@ -20,7 +22,6 @@ function App() {
       }
     };
 
-    // 연결할 경로 설정
     generateQRCode('/about');
   }, []);
 
@@ -34,7 +35,10 @@ function App() {
         </header>
         <Routes>
           <Route path="/" element={<Home qrCodeUrl={qrCodeUrl} />} />
-          <Route path="/about" element={<Admin qrCodeUrl={qrCodeUrl} />} />
+          <Route path="/login" element={<Login />} /> {/* /login 경로 추가 */}
+          <Route element={<PrivateRoute />}>
+            <Route path="/admin" element={<Admin />} />
+          </Route>
         </Routes>
       </div>
     </Router>
