@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import QRCode from 'qrcode';
 import Home from './components/Home';
-import Profile from './components/Profile';
-
+import Admin from './components/Admin';
 function App() {
   const [qrCodeUrl, setQrCodeUrl] = useState('');
 
@@ -32,7 +31,7 @@ function App() {
         </header>
         <Routes>
           <Route path="/" element={<Home qrCodeUrl={qrCodeUrl} />} />
-          <Route path="/about" element={<Profile />} />
+          <Route path="/about" element={<Admin qrCodeUrl={qrCodeUrl} />} />
         </Routes>
       </div>
     </Router>
