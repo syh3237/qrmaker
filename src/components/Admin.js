@@ -5,7 +5,7 @@ function Admin({ qrCodeUrl }) {
     hello
 
      <img src={qrCodeUrl} alt="QR Code" />
-     
+
   </div>;
 }
 
