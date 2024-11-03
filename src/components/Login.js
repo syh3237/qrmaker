@@ -14,8 +14,16 @@ function Login() {
   };
 
   return (
-     <div>
-        <button onClick={handleLogin}>구글 로그인</button>
+     <div className='login_area'>
+         <h2>Login</h2>
+         <div className="input_box">
+            <input type="text" className='user_id'/>
+            <input type="text" className='user_pw'/>
+         </div>
+         <div className="btn_box">
+            <button>로그인</button>
+            <button onClick={handleLogin}>구글 로그인</button>
+         </div>
      </div>
   );
 }

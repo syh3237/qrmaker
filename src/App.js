@@ -30,7 +30,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <nav>
-            <Link to="/">홈</Link> | <Link to="/about">소개</Link>
+            <Link to="/">홈</Link> | <Link to="/about">소개</Link> | <Link to="/login">로그인</Link>
           </nav>
         </header>
         <Routes>

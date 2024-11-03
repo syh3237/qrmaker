@@ -20,4 +20,9 @@ body{
   .modal .btn_close{
     position: absolute;top: 10px;right: 10px;
   }
+
+  /* Login */
+  .login_area{display: flex;align-items: center;justify-content: center;flex-direction: column;}
+  .login_area input{display: block;}
+  .login_area .btn_box{display: flex;justify-content: center;flex-direction: column;}
   

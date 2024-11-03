@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 function Home({ qrCodeUrl }) {
   let [modal, setModal] = useState(false);
+  const phoneNumber = "01012345678";
   return  <div>
     <button onClick={()=>{
       setModal(!modal)
@@ -12,7 +13,7 @@ function Home({ qrCodeUrl }) {
       modal === true ? <div className='modal'>
         <div className="inner">
           <div>010-0000-0000</div>
-          <button>Call</button>
+          <a href={`tel:${phoneNumber}`}>Call</a>
           <button className='btn_close' onClick={()=>{
                   setModal(false)
           }}>X</button>
