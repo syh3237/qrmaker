@@ -12,11 +12,12 @@ function Login({ onLoginSuccess }) {
      try {
         // eslint-disable-next-line no-unused-vars
         const result = await signInWithPopup(auth, provider); // signInWithPopup 사용
+        const user = result.user;
+        const token = await user.getIdToken();
         const firebaseConnector = new FirebaseConnector(); // FirebaseConnector 인스턴스 생성
         await firebaseConnector.writeUserName(); // writeUserName 호출
-        localStorage.setItem('authToken', token); // 로그인 성공 시 토큰 저장
         onLoginSuccess(); // 로그인 성공 시 상태 업데이트
-        window.location.href = '/admin';
+        navigate('/admin'); // 페이지 새로고침 없이 /admin 페이지로 이동
      } catch (error) {
       console.error('로그인 실패:', error);
       alert("로그인에 실패했습니다. 다시 시도해 주세요."); // 로그인 실패 시 메시지 표시
