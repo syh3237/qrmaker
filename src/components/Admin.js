@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DBConnector from '../connector/DBConnector';
 
 function Admin({ qrCodeUrl }) {
-  
+
   const dbConnector = new DBConnector();
   const [currentUser, setCurrentUser] = useState(null);
 
