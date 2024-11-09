@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import DBConnector from '../connector/DBConnector';
+import DBConnector from '../../connector/DBConnector';
 
 function Admin({ qrCodeUrl }) {
 

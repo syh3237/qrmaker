@@ -27,10 +27,6 @@ const NavLink = styled(Link)`
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s;
-
-  &:hover {
-    color: #ddd;
-  }
 `;
 
 const Actions = styled.div`

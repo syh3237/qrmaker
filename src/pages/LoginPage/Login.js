@@ -1,8 +1,8 @@
 // eslint-disable-next-line
 import React from 'react';
 import { signInWithPopup } from 'firebase/auth';
-import { auth, provider } from '../firebase';
-import FirebaseConnector from '../connector/FirebaseConnector'; // FirebaseConnector 가져오기
+import { auth, provider } from '../../firebase';
+import FirebaseConnector from '../../connector/FirebaseConnector'; // FirebaseConnector 가져오기
 import { useNavigate } from 'react-router-dom';
 
 function Login({ onLoginSuccess }) {
