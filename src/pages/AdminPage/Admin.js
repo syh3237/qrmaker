@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import DBConnector from '../../connector/DBConnector';
 
 function Admin({ qrCodeUrl }) {
-
+  const { userId } = useParams(); // URL에서 userId 파라미터 가져오기
   const dbConnector = new DBConnector();
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
     const fetchCurrentUser = async () => {
-      const user = await dbConnector.getCurrentUser();
-      setCurrentUser(user);
+      try {
+        // userId를 사용해 현재 사용자 정보를 가져옴
+        const user = await dbConnector.getCurrentUser(userId);
+        setCurrentUser(user);
+      } catch (error) {
+        console.error("Failed to fetch user:", error);
+      }
     };
 
     fetchCurrentUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [userId]);
 
   const handleSetQRList = () => {
     // eslint-disable-next-line

@@ -43,7 +43,7 @@ const Line = styled.span`
     background:#111;
 `
 
-function Util({ isAuthenticated, onLogout }) {
+function Util({ isAuthenticated, userId, onLogout }) {
     const navigate = useNavigate();
 
     const handleLogoutClick = () => {
@@ -52,8 +52,8 @@ function Util({ isAuthenticated, onLogout }) {
     };
 
     const handleAdminClick = () => {
-        if (isAuthenticated) {
-            navigate('/admin');
+        if (isAuthenticated && userId) {
+            navigate(`/admin/${userId}`); // userId를 포함한 경로로 이동
         } else {
             alert("로그인이 필요합니다.");
             navigate('/login');
